@@ -1,0 +1,74 @@
+
+
+<style type="text/css">
+  .content-wrapper, .right-side, .main-footer {
+    margin-left: 0px !important;
+    transition: transform 0.3s ease-in-out 0s, margin 0.3s ease-in-out 0s;
+    z-index: 820;
+}
+</style>
+<div class="login-box" data-ng-init="noHeader()"  >
+  <div class="login-logo" ng-show='userLoggedIn==false'>
+   <!-- <img src="images/logo.png"  alt="logo" style="height:40px"/> -->
+  <b>FlirtMe</b>
+  </div>
+  <!-- /.login-logo -->
+  <div class="login-box-body" ng-show='userLoggedIn==false'>
+    <p class="login-box-msg">Sign in to start your session</p>
+
+    <form name="login_form" role="form" id="login_form" novalidate>
+    <!-- <span style="color:red" ng-show="error" >
+                            {{error}}
+                    </span> -->
+                     <div ng-class="alerttype" ng-show="showmessage">
+                                                <button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>{{message}}</div>
+      <div class="form-group has-feedback">
+        <input type="text" name="username" class="form-control" placeholder="Username *" ng-model='username' required />
+                       <span style="color:red" ng-show="login_form.username.$dirty && login_form.username.$invalid">
+<span ng-show="login_form.username.$error.required">Username is required.</span>
+</span>
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="password" name="password" class="form-control" placeholder="Password *" ng-model='password' required/>
+                       <span style="color:red" ng-show="login_form.password.$dirty && login_form.password.$invalid">
+<span ng-show="login_form.password.$error.required">Password is required.</span>
+</span>
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+      <div class="row">
+        <!-- <div class="col-xs-8">
+          <div class="checkbox icheck">
+            <label>
+              <input type="checkbox"> Remember Me
+            </label>
+          </div>
+        </div> -->
+        <!-- /.col -->
+        <div class="col-xs-4">
+          <button type="submit" onsubmit="return false;"  class="btn btn-primary btn-block btn-flat"name="login" ng-click="login()" ng-disabled="login_form.$invalid">Sign In</button>
+        </div>
+        <!-- /.col -->
+      </div>
+    </form>
+
+    <!-- <div class="social-auth-links text-center">
+      <p>- OR -</p>
+      <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using
+        Facebook</a>
+      <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using
+        Google+</a>
+    </div> -->
+    <!-- /.social-auth-links -->
+
+    <a href="/#/forgot-password">I forgot my password</a><br>
+    <!-- <a href="register.html" class="text-center">Register a new membership</a>
+ -->
+  </div>
+  <!-- /.login-box-body -->
+</div>
+<!-- /.login-box -->
+
+
+
+         

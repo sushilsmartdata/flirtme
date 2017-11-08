@@ -1,0 +1,76 @@
+
+                <section class="content-header" ng-init="findOne()">
+                    <h1>
+                        Jobs
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="/#/home"><i class="fa fa-dashboard"></i> Home</a></li>
+                        <li><a href="/#/jobs">Jobs</a></li> 
+                         <li>Add</li>                      
+                    </ol>
+                </section>
+                <div ng-if="loader==true" >
+        <div class="loader-image">
+            <i class="fa fa-spinner fa-pulse fa-spin"></i>
+        </div>
+        <div class="loader-container"></div></div>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="row">
+                        <div class="col-xs-12">
+
+                             <div class="box box-primary">
+                                    
+                                <!-- <div class="box-header">
+                                    <h3 class="box-title">Data Table With Full Features</h3>
+                                </div> -->
+                                <div class="box-body table-responsive">                                   
+                                                                    
+                                    <form method="post" role="form" name="jobForm" enctype="multipart/form-data">
+                                    <div class="box-body">
+                                        <div class="form-group">
+                                            <label>Title</label><span class="red">*</span>
+                                            <input type="text" name="title" class="form-control" ng-model="job.title"  required>
+                                            <div style="color:red" ng-show="jobForm.title.$dirty && jobForm.title.$invalid">
+                                            <span ng-show="jobForm.title.$error.required">Title is required.</span>
+                                            </div>
+                                           <label>Description</label><span class="red">*</span>
+                                            <input type="text" name="description" class="form-control" ng-model="job.description"  required>
+                                            <div style="color:red" ng-show="jobForm.description.$dirty && jobForm.description.$invalid">
+                                            <span ng-show="jobForm.description.$error.required">Description is required.</span>
+                                            </div>
+                                            <label>Budget</label><span class="red">*</span>
+                                            <input type="number" name="budget" class="form-control" ng-model="job.budget"  required placeholder="$">
+                                            <div style="color:red" ng-show="jobForm.budget.$dirty && jobForm.budget.$invalid">
+                                            <span ng-show="jobForm.budget.$error.required">Budget is required.</span>
+                                            <span ng-show="jobForm.budget.$error.number">Budget is not valid.</span>
+                                            </div>
+                                            <label><label>Contract Type</label>
+                                            <div class="checkbox">
+                                                
+                                                    <input type="radio" ng-model='job.contract_type' value="0"  />
+                                                    Fixed
+                                                    <input type="radio" ng-model='job.contract_type' value="1" />
+                                                    Hourly
+                                                </label>
+                                            </div
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" ng-model='job.enable' checked="true" />
+                                                    Enable
+                                                </label>
+                                            </div>                                          
+                                    </div><!-- /.box-body -->
+                                    <div class="box-footer">
+                                        <button type="button" class="btn btn-primary" ng-click="updateData()" ng-disabled="jobForm.$invalid">Save</button>
+                                        <a href="/#/jobs" class="btn m_lft5 btn-primary">Cancel</a>
+                                    </div>
+                                </form>              
+                                  
+                                </div><!-- /.box-body -->
+                            </div><!-- /.box -->
+                        </div>
+                    </div>
+
+                </section><!-- /.content -->
+            
